@@ -62,8 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       value: widget.homeController.tasks[index].status,
                       secondary: CircleAvatar(
                         child: Icon(widget.homeController.tasks[index].status == true ?
-                        Icons.check : Icons.error),
+                        Icons.check : Icons.error)
                         ),
+                        onChanged: (c) {
+                          setState(() {
+                                widget.homeController.tasks[index].status = c;
+                          });
+                        },
                     );
                   }),
             )

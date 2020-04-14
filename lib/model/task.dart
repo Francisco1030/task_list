@@ -1,6 +1,6 @@
 class Task {
-  final String title;
-  final bool status;
+  String title;
+  bool status;
 
   Task({
     this.title,
