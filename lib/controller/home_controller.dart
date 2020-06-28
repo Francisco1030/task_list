@@ -8,15 +8,25 @@ class HomeController {
 
   final taskController = TextEditingController();
 
-  List<Task> tasks = [
-    Task(title: "Atividade ED", status: false),
-    Task(title: "Atividade DB", status: false)
-  ];
+  // List<Task> tasks = [
+  //   // Task(title: "Atividade ED", status: false),
+  //   // Task(title: "Atividade DB", status: false)
+  // ];
+
+  List tasks = [];
 
   void add() {
-    tasks.add(Task(title: taskController.text, status: false));
-    taskController.text = "";
-    print(taskController.value.text);
+    // tasks.add(Task(title: taskController.text, status: false));
+    // taskController.text = "";
+    // saveData();
+    //print(taskController.value.text);
+    Map<String, dynamic> newToDo = Map();
+      newToDo["title"] = taskController.text;
+      taskController.text = "";
+      newToDo["ok"] = false;
+      tasks.add(newToDo);
+
+      saveData();
   }
 
   Future<File> getFile() async {
